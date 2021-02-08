@@ -1,6 +1,8 @@
 package fr.esgi.library;
 
+import fr.esgi.library.infra.BookRepositoryPersistence;
 import fr.esgi.library.model.Book;
+import fr.esgi.library.model.BookRepository;
 import fr.esgi.library.model.Library;
 import fr.esgi.library.model.User;
 
@@ -16,18 +18,18 @@ public class Application {
         final String action = args[1];
         final String bookTitle = args.length >= 3 ? args[2] : "Default title";
         final String bookAuthor = args.length >= 4 ? args[3] : "Default author";
+        final BookRepository bookRepository = new BookRepository(new BookRepositoryPersistence());
 
-        Library library = new Library();
+        System.out.println("Hello " + userType);
+
+        Library library = bookRepository.getLibrary();
         User user = new User(userType);
         Book book = Book.of(bookTitle, bookAuthor);
-
-        System.out.println("Hello " + user.type());
 
         library.loadUserActions(user);
         library.doAction(action, book);
 
-//        library.doAction("see", book);
-
+        bookRepository.saveLibrary(library);
     }
 
 }

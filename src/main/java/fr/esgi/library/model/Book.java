@@ -1,6 +1,8 @@
 package fr.esgi.library.model;
 
-public class Book {
+import java.io.Serializable;
+
+public class Book implements Serializable {
     private final String title;
     private final String author;
 
