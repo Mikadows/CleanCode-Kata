@@ -20,11 +20,10 @@ public class Application {
         final String bookAuthor = args.length >= 4 ? args[3] : "Default author";
         final BookRepository bookRepository = new BookRepository(new BookRepositoryPersistence());
 
-        System.out.println("Hello " + userType);
+        final Library library = bookRepository.getLibrary();
 
-        Library library = bookRepository.getLibrary();
-        User user = new User(userType);
-        Book book = Book.of(bookTitle, bookAuthor);
+        final User user = new User(userType);
+        final Book book = Book.of(bookTitle, bookAuthor);
 
         library.loadUserActions(user);
         library.doAction(action, book);
