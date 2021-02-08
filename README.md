@@ -32,4 +32,9 @@ Design notes:
 - ask questions to check if there is hidden rules
 - define your main use cases and find 2-3 exemples to illust
 
+# Cases
 
+Users can be : 
+* guest
+* librarian
+* members
