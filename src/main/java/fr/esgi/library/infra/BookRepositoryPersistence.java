@@ -13,6 +13,7 @@ import java.util.List;
 public class BookRepositoryPersistence implements IBookRepository {
 
     @Override
+    @SuppressWarnings("unchecked")
     public List<Book> loadBooks() {
         List<Book> books = new ArrayList<>();
 
