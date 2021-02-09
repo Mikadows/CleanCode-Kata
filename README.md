@@ -35,6 +35,22 @@ Design notes:
 # Cases
 
 Users can be : 
-* guest
-* librarian
-* members
+* guest (can see all books) 
+* librarian (can add books)
+* members (can add borrow books)
+
+Program arguments to see books in library :
+```
+guest see
+```
+
+Program arguments to add books into the library :
+```
+librarian add "Title Of the Book" "Author Of the Book"
+```
+
+Program arguments to borrow books into the library :
+Not Implemented.
+```
+member borrow "Title Of the Book"
+```

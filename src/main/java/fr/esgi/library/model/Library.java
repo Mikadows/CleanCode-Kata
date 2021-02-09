@@ -27,7 +27,7 @@ public class Library {
                 this.actions.put("see", new SeeBook());
                 break;
             case "librarian":
-                this.actions.put("see", new SeeBook());
+//                this.actions.put("see", new SeeBook());
                 this.actions.put("add", new AddBook());
                 break;
             case "member":
